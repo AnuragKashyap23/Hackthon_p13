@@ -1,28 +1,23 @@
 import React from 'react'
-import { useState,createContext} from 'react'
+import { createContext} from 'react'
 import { Path } from './../node_modules/@humanfs/core/src/path';
 import { Route, Routes } from 'react-router-dom';
 import {ToastContainer} from 'react-toastify'
+import Register from './pages/register'
+// import ind from './ind'
 
 export const AuthContext = createContext()
 
 function App() {
-  const [user, setUser] = useState(null)
 
   return (
-    <AuthContext.Provider value = {{user,setUser}}>
+    <>
       <Routes>
         <Route
-          Path = '/'
-          element = {<login/>} 
+        path='/' element={<Register/>}
         />
-        <Route
-          path = 'register'
-          element = {<register/>}
-        />
-
       </Routes>
-    </AuthContext.Provider>
+    </>
     
   )
 }
